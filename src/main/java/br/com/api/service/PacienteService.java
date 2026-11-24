@@ -52,7 +52,7 @@ public class PacienteService {
         return pacienteRepository.save(pacienteExistente);
     }
 
-    //void aqui pornão vai retornar nada, só vai deletar 
+    //void aqui porque não vai retornar nada, só vai deletar 
     public void deletarPaciente(Long id) {
         Paciente paciente = listarPorId(id);
         pacienteRepository.delete(paciente);

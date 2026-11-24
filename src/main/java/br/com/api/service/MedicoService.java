@@ -20,12 +20,15 @@ public class MedicoService {
 	}
 	
 	public Medico listarPorId(Long id) {
-		return medicoRepository.findById(id).get();
+		return medicoRepository.findById(id).orElseThrow(()-> new RuntimeException("Médico não encontrado com o id: " + id));
 	}
-	
+
 	public Medico adicionarMedico(Medico medico) {
-		return medicoRepository.save(medico);
-	}
+    if (medicoRepository.existsByCrm(medico.getCrm())) {
+        throw new RuntimeException("Já existe um médico cadastrado com este CRM: " + medico.getCrm());
+    }
+    return medicoRepository.save(medico);
+}
 	
 	public Medico atualizarMedico(Long id, Medico medico) {
 		var medicoAtualizado = listarPorId(id);
@@ -33,12 +36,13 @@ public class MedicoService {
 		medicoAtualizado.setNome(medico.getNome());
 		medicoAtualizado.setEspecialidade(medico.getEspecialidade());
 		medicoAtualizado.setTelefone(medico.getTelefone());
-		medicoAtualizado.setId(medico.getId());
+
 		return medicoRepository.save(medicoAtualizado);
 		
 	}
 	
 	public void deletarMedico(Long id) {
-		medicoRepository.deleteById(id);
-	}
+    var medico = listarPorId(id);
+    medicoRepository.delete(medico);
+}
 }

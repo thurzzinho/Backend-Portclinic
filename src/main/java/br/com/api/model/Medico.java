@@ -62,7 +62,5 @@ public class Medico {
 		this.telefone = telefone;
 	}
 	
-	
-
 }
 

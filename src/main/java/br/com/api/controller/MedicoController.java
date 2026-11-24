@@ -24,18 +24,18 @@ public class MedicoController {
 		this.medicoService = medicoService;
 	}
 	
-	@GetMapping("/list")
+	@GetMapping
 	public List<Medico> listarMedicos(){
 		return medicoService.listar();
 	}
 	
 	@GetMapping("/{id}")
-	public Medico pegarPorId(@PathVariable Long id) {
+	public Medico buscarPorId(@PathVariable Long id) {
 		return medicoService.listarPorId(id);
 	}
 	
 	@PostMapping
-	public Medico adicionarMedico(@RequestBody Medico medico) {
+	public Medico cadastrarMedico(@RequestBody Medico medico) {
 		return medicoService.adicionarMedico(medico);
 	}
 	

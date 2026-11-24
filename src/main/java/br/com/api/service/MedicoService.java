@@ -4,13 +4,13 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 import br.com.api.model.Medico;
-import br.com.api.repository.MedicoReposiory;
+import br.com.api.repository.MedicoRepository;
 
 @Service
 public class MedicoService {
-	private final MedicoReposiory medicoRepository;
+	private final MedicoRepository medicoRepository;
 
-	public MedicoService(MedicoReposiory medicoRepository) {
+	public MedicoService(MedicoRepository medicoRepository) {
 
 		this.medicoRepository = medicoRepository;
 	}

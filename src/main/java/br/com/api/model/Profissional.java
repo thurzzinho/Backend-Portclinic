@@ -7,9 +7,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_medicos")
+@Table(name = "tb_profissionais")
 
-public class Medico {
+public class Profissional {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,11 +19,11 @@ public class Medico {
     private String especialidade;
     private String telefone;
 
-    public Medico() {
+    public Profissional() {
 
     }
 
-    public Medico(String nome, Long id, String crm, String especialidade, String telefone) {
+    public Profissional(String nome, Long id, String crm, String especialidade, String telefone) {
         this.nome = nome;
         this.id = id;
         this.crm = crm;

@@ -15,14 +15,14 @@ public class PacienteService {
         this.pacienteRepository = pacienteRepository;
     }
 
-    public List<Paciente> listar(){
-        return
-    pacienteRepository.findAll();
+    public List<Paciente> listar() {
+        return pacienteRepository.findAll();
     }
 
-    public Paciente listarPorId(Long id){
+    public Paciente listarPorId(Long id) {
         // aqui é basicamente para: procure um paciente com o id. se encontrar, retorne. se não, avise que não foi encontrado
-        return pacienteRepository.findById(id).orElseThrow(() -> new RuntimeException("Paciente não encontrado com o id: " + id));
+        return pacienteRepository.findById(id).orElseThrow(()
+                -> new RuntimeException("Paciente não encontrado com o id: " + id));
     }
 
     public Paciente adicionarPaciente(Paciente paciente) {

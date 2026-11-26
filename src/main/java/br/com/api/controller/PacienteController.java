@@ -16,12 +16,12 @@ public class PacienteController {
     }
 
     @GetMapping
-    public List<Paciente> listarPacientes(){
+    public List<Paciente> listarPacientes() {
         return pacienteService.listar();
     }
 
     @GetMapping("/{id}")
-    public Paciente listarporId(@PathVariable Long id){
+    public Paciente listarporId(@PathVariable Long id) {
         return pacienteService.listarPorId(id);
     }
 
@@ -31,13 +31,13 @@ public class PacienteController {
     }
 
     @PutMapping("/{id}")
-    public Paciente atualizarPaciente(@PathVariable Long id, @RequestBody Paciente paciente){
-    return pacienteService.atualizarPaciente(id, paciente);
+    public Paciente atualizarPaciente(@PathVariable Long id, @RequestBody Paciente paciente) {
+        return pacienteService.atualizarPaciente(id, paciente);
     }
 
     @DeleteMapping("/{id}")
-    public void deletarpaciente(@PathVariable Long id){
-    pacienteService.deletarPaciente(id);
+    public void deletarpaciente(@PathVariable Long id) {
+        pacienteService.deletarPaciente(id);
     }
 
 }

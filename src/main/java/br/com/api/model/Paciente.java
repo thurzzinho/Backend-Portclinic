@@ -1,11 +1,12 @@
 package br.com.api.model;
+
 import java.time.LocalDate;
+
 import jakarta.persistence.*;
 
 
-
 @Entity
-@Table(name= "tb_pacientes")
+@Table(name = "tb_pacientes")
 
 public class Paciente {
 
